@@ -1,4 +1,4 @@
-package world
+package api.world
 
 import entities.User
 

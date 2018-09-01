@@ -1,9 +1,9 @@
-package stepDefinitions.api
+package api.stepDefinitions
 
-import cucumber.api.scala.{EN, ScalaDsl}
 import entities.User
-import manager.HTTPManager
-import world.World
+import api.manager.HTTPManager
+import api.world.World
+import cucumber.api.scala.{EN, ScalaDsl}
 
 class ApiStepDefinition extends ScalaDsl with EN {
 

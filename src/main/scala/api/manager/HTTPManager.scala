@@ -1,9 +1,9 @@
-package manager
+package api.manager
 
 import com.google.gson.Gson
 import constants.MyConstants
 import scalaj.http.{Http, HttpResponse}
-import world.World
+import api.world.World
 
 object HTTPManager {
   def register(): HttpResponse[String] = {
@@ -11,7 +11,7 @@ object HTTPManager {
     val body = new Gson
     val bodyJSON = body.toJson(World.myUser.get)
 
-    Http(s"${MyConstants.baseURL}users")
+    Http(s"${MyConstants.apiBaseURL}users")
       .timeout(10000, 10000)
       .method("POST")
       .postData(bodyJSON)
@@ -23,7 +23,7 @@ object HTTPManager {
     val body = new Gson
     val bodyJSON = body.toJson(World.myUser.get)
 
-    Http(s"${MyConstants.baseURL}login")
+    Http(s"${MyConstants.apiBaseURL}login")
       .timeout(10000, 10000)
       .header("Content-Type", "application/json")
       .method("POST")
@@ -35,7 +35,7 @@ object HTTPManager {
 
     val malformedBody : String = s"""{"email":"${World.myUser.get.email}"}"""
 
-    Http(s"${MyConstants.baseURL}login")
+    Http(s"${MyConstants.apiBaseURL}login")
       .timeout(10000, 10000)
       .header("Content-Type", "application/json")
       .method("POST")
