@@ -11,3 +11,5 @@ libraryDependencies += "junit" % "junit" % "4.12"
 libraryDependencies += "org.scalaj" %% "scalaj-http" % "2.3.0"
 libraryDependencies += "com.google.code.gson" % "gson" % "2.8.5"
 libraryDependencies += "org.seleniumhq.selenium" % "selenium-java" % "2.46.0"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.0" % "test"
+libraryDependencies += "com.novocode" % "junit-interface" % "0.11" % Test exclude("junit", "junit-dep")
