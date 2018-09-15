@@ -1,6 +1,6 @@
 package selenium.objectDescriptors
 
-object ObjectDescriptors {
+object ObjectRepository {
 
   object BattleNetRegistrationDescriptors {
     val firstname = "firstName"
@@ -47,4 +47,19 @@ object ObjectDescriptors {
     val logoutButton = "logout"
   }
 
+  object Checkout{
+    val tshirtsCategory = "/html/body[@id='index']/div[@id='page']/div[@class='header-container']/header[@id='header']/div[3]/div[@class='container']/div[@class='row']/div[@id='block_top_menu']/ul[@class='sf-menu clearfix menu-content sf-js-enabled sf-arrows']/li[3]/a"//"//a[contains(@title, 'T-shirts')]"
+    val firstProductContainer = "//img[contains(@class, 'replace-2x img-responsive') and contains(@title, 'Faded Short Sleeve T-shirts')]"
+    val viewCart = "//a[contains(@title, 'View my shopping cart')]"
+    val addToCart = "//a[contains(@class, 'button ajax_add_to_cart_button btn btn-default') and contains(@data-id-product, '1')]"
+    val proceedToCheckout = "//a[contains(@title, 'Proceed to checkout')]"
+    val proceedToCheckoutAgain = "//p//a[contains(@title, 'Proceed to checkout')]"
+    val processAddress= "//p//button[contains(@name, 'processAddress')]"
+    val agreeServiceTerms = "cgv"
+    val processCarrier= "//p//button[contains(@name, 'processCarrier')]"
+    val payByCheck = "cheque"
+    val confirmOrder = "//button[contains(@type, 'submit') and contains(@class, 'button btn btn-default button-medium')]"
+    val orderConfirmed = "//p[contains(@class, 'alert alert-success')]"
+    val orderIsCompleteBox = "//div[contains(@class, 'box order-confirmation')]"
+  }
 }

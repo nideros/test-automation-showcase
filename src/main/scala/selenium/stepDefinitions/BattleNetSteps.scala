@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.remote.DesiredCapabilities
 import selenium.world.SeleniumWorld
 import java.util.concurrent.TimeUnit
-import selenium.objectDescriptors.ObjectDescriptors
+import selenium.objectDescriptors.ObjectRepository
 
 class BattleNetSteps extends ScalaDsl with EN {
 
@@ -32,21 +32,21 @@ class BattleNetSteps extends ScalaDsl with EN {
   }
 
   Then("""^I filla the registration form$""") { () =>
-    SeleniumWorld.driver.get.findElementById(ObjectDescriptors.BattleNetRegistrationDescriptors.firstname).sendKeys("Selenium")
-    SeleniumWorld.driver.get.findElementById(ObjectDescriptors.BattleNetRegistrationDescriptors.lastName).sendKeys("Test")
-    SeleniumWorld.driver.get.findElementById(ObjectDescriptors.BattleNetRegistrationDescriptors.dayOfBirth).sendKeys("6")
-    val month : WebElement = SeleniumWorld.driver.get.findElementById(ObjectDescriptors.BattleNetRegistrationDescriptors.monthOfBirth)
+    SeleniumWorld.driver.get.findElementById(ObjectRepository.BattleNetRegistrationDescriptors.firstname).sendKeys("Selenium")
+    SeleniumWorld.driver.get.findElementById(ObjectRepository.BattleNetRegistrationDescriptors.lastName).sendKeys("Test")
+    SeleniumWorld.driver.get.findElementById(ObjectRepository.BattleNetRegistrationDescriptors.dayOfBirth).sendKeys("6")
+    val month : WebElement = SeleniumWorld.driver.get.findElementById(ObjectRepository.BattleNetRegistrationDescriptors.monthOfBirth)
     month.click()
-    month.findElement(By.xpath(ObjectDescriptors.BattleNetRegistrationDescriptors.monthSelection)).click()
-    SeleniumWorld.driver.get.findElementById(ObjectDescriptors.BattleNetRegistrationDescriptors.yearOfBirth).sendKeys("1991")
-    SeleniumWorld.driver.get.findElementById(ObjectDescriptors.BattleNetRegistrationDescriptors.email).sendKeys(s"selenium.test.${new java.text.SimpleDateFormat("yyMMddHHmmss").format(new java.util.Date())}@test.com")
-    SeleniumWorld.driver.get.findElementById(ObjectDescriptors.BattleNetRegistrationDescriptors.password).sendKeys("MatteoBullo123!")
-    val question : WebElement = SeleniumWorld.driver.get.findElementById(ObjectDescriptors.BattleNetRegistrationDescriptors.selectSecretQuestion)
+    month.findElement(By.xpath(ObjectRepository.BattleNetRegistrationDescriptors.monthSelection)).click()
+    SeleniumWorld.driver.get.findElementById(ObjectRepository.BattleNetRegistrationDescriptors.yearOfBirth).sendKeys("1991")
+    SeleniumWorld.driver.get.findElementById(ObjectRepository.BattleNetRegistrationDescriptors.email).sendKeys(s"selenium.test.${new java.text.SimpleDateFormat("yyMMddHHmmss").format(new java.util.Date())}@test.com")
+    SeleniumWorld.driver.get.findElementById(ObjectRepository.BattleNetRegistrationDescriptors.password).sendKeys("MatteoBullo123!")
+    val question : WebElement = SeleniumWorld.driver.get.findElementById(ObjectRepository.BattleNetRegistrationDescriptors.selectSecretQuestion)
     question.click()
-    question.findElement(By.xpath(ObjectDescriptors.BattleNetRegistrationDescriptors.secretQuestionValue)).click()
-    SeleniumWorld.driver.get.findElementById(ObjectDescriptors.BattleNetRegistrationDescriptors.secretAnswer).sendKeys("Selenium answer")
-    SeleniumWorld.driver.get.findElementById(ObjectDescriptors.BattleNetRegistrationDescriptors.agreePrivacy).click()
-    SeleniumWorld.driver.get.findElementById(ObjectDescriptors.BattleNetRegistrationDescriptors.createButton).click()
+    question.findElement(By.xpath(ObjectRepository.BattleNetRegistrationDescriptors.secretQuestionValue)).click()
+    SeleniumWorld.driver.get.findElementById(ObjectRepository.BattleNetRegistrationDescriptors.secretAnswer).sendKeys("Selenium answer")
+    SeleniumWorld.driver.get.findElementById(ObjectRepository.BattleNetRegistrationDescriptors.agreePrivacy).click()
+    SeleniumWorld.driver.get.findElementById(ObjectRepository.BattleNetRegistrationDescriptors.createButton).click()
   }
 
   Then("""^I cana access myAccount area$"""){ () =>
