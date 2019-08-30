@@ -7,6 +7,4 @@ Feature: Multiple Users Registration
 
     Examples:
       | email                   | password     |
-      | matteototeda@test.com   | Toteda123!   |
-      | jasonbelfiore@test.com  | Belfiore123! |
-      | antoniocascasi@test.com | Cascasi123!  |
+      | eve.holt@reqres.in      | cityslicka   |
